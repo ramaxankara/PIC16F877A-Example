@@ -1,0 +1,52 @@
+MPLINK 4.48, Linker
+Linker Map File - Created Sun Jan 20 17:12:48 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000092
+  .config_2007_UNTITLED.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000048      
+                            0x002007    0x002007      
+            74 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      BOS   0x000033    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                      DHH   0x000042    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                     DHH2   0x000044    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                      DON   0x000029    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                    DONGU   0x00001f    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                  GECIKME   0x000040    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                     ISIM   0x000034    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                 KARAKTER   0x000017    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                    KOMUT   0x00000f    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                  SOYISIM   0x00003c    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KOMUT   0x00000f    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                 KARAKTER   0x000017    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                    DONGU   0x00001f    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                      DON   0x000029    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                      BOS   0x000033    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                     ISIM   0x000034    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                  SOYISIM   0x00003c    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                  GECIKME   0x000040    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                      DHH   0x000042    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+                     DHH2   0x000044    program     static C:\Users\Ferhat\Desktop\örnekler\LCDISIM\Untitled.asm
+
+

@@ -1,0 +1,562 @@
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (INCLUDE)
+                      00001 INCLUDE<P16F877A.INC>
+                      00001         LIST
+                      00002 ; P16F877A.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00400         LIST
+Warning[205]: Found directive in column 1. (__config)
+2007   3F31           00002 __config H'3F31'
+                      00003 
+  00000023            00004 SAY1 EQU 0X23
+  00000024            00005 SAY2 EQU 0X24
+                      00006 
+                      00007 
+Warning[205]: Found directive in column 1. (ORG)
+0000                  00008 ORG 0X00
+Warning[203]: Found opcode in column 1. (goto)
+0000   2804           00009 goto anaprogram
+Warning[205]: Found directive in column 1. (ORG)
+0004                  00010 ORG 0X04
+0004                  00011 KESME
+                      00012 
+                      00013 
+                      00014 
+0004                  00015 anaprogram
+Warning[205]: Found directive in column 1. (BANKSEL)
+0004   1683 1303      00016 BANKSEL TRISA
+Warning[203]: Found opcode in column 1. (MOVLW)
+0006   3006           00017 MOVLW 0x06
+Warning[203]: Found opcode in column 1. (MOVWF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   009F           00018 MOVWF ADCON1
+Warning[203]: Found opcode in column 1. (MOVLW)
+0008   30CF           00019 MOVLW 0XCF
+Warning[203]: Found opcode in column 1. (MOVWF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   0085           00020 MOVWF TRISA
+Warning[203]: Found opcode in column 1. (CLRF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   0187           00021 CLRF TRISC
+                      00022 
+Warning[205]: Found directive in column 1. (BANKSEL)
+000B   1283 1303      00023 BANKSEL INTCON
+Warning[203]: Found opcode in column 1. (BSF)
+000D   178B           00024 BSF INTCON,GIE
+Warning[203]: Found opcode in column 1. (BSF)
+000E   170B           00025 BSF INTCON,PEIE
+Warning[205]: Found directive in column 1. (BANKSEL)
+000F   1283 1303      00026 BANKSEL T2CON
+Warning[203]: Found opcode in column 1. (BSF)
+0011   1412           00027 BSF T2CON,T2CKPS0
+Warning[203]: Found opcode in column 1. (BCF)
+0012   1092           00028 BCF T2CON,T2CKPS1     ;TMR2 PRESCALER 1:4
+Warning[203]: Found opcode in column 1. (BSF)
+0013   1512           00029 BSF T2CON,TMR2ON
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (BANKSEL)
+0014   1683 1303      00030 BANKSEL PR2
+Warning[203]: Found opcode in column 1. (MOVLW)
+0016   30C7           00031 MOVLW D'199'                    ;Periyod 800 mikrosaniye ayarlandý
+Warning[203]: Found opcode in column 1. (MOVWF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0017   0092           00032 MOVWF PR2               
+                      00033 
+Warning[205]: Found directive in column 1. (BANKSEL)
+0018   1283 1303      00034 BANKSEL CCP1CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+001A   300C           00035 MOVLW 0X0C                      ;00001100       ATANDI
+Warning[203]: Found opcode in column 1. (MOVWF)
+001B   0097           00036 MOVWF CCP1CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+001C   3032           00037 MOVLW B'00110010'   ;200 DENK GELIO 10 BÝT
+Warning[203]: Found opcode in column 1. (MOVWF)
+001D   0095           00038 MOVWF CCPR1L            ;DUTYCYCLE = %25
+                      00039 
+Warning[205]: Found directive in column 1. (BANKSEL)
+001E   1283 1303      00040 BANKSEL CCP2CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+0020   300C           00041 MOVLW 0X0C
+Warning[203]: Found opcode in column 1. (MOVWF)
+0021   009D           00042 MOVWF CCP2CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+0022   3064           00043 MOVLW B'01100100'    ;400 DENK GELIO 10 BÝTTE
+Warning[203]: Found opcode in column 1. (MOVWF)
+0023   009B           00044 MOVWF CCPR2L            ;DUTY CYCLE = %50
+                      00045                 
+                      00046 
+0024                  00047 KONTROLET
+Warning[203]: Found opcode in column 1. (BTFSC)
+0024   1805           00048 BTFSC PORTA,0
+Warning[203]: Found opcode in column 1. (CALL)
+0025   202D           00049 CALL  MARTIR
+Warning[203]: Found opcode in column 1. (BTFSC)
+0026   1885           00050 BTFSC PORTA,1
+Warning[203]: Found opcode in column 1. (CALL)
+0027   2035           00051 CALL  MAZALT
+Warning[203]: Found opcode in column 1. (BTFSC)
+0028   1905           00052 BTFSC PORTA,2
+Warning[203]: Found opcode in column 1. (CALL)
+0029   203D           00053 CALL  LARTIR
+Warning[203]: Found opcode in column 1. (BTFSC)
+002A   1985           00054 BTFSC PORTA,3
+Warning[203]: Found opcode in column 1. (CALL)
+002B   2045           00055 CALL  LAZALT
+Warning[203]: Found opcode in column 1. (GOTO)
+002C   2824           00056 GOTO  KONTROLET
+                      00057 
+                      00058 
+002D                  00059 MARTIR
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVF)
+002D   0815           00060 MOVF CCPR1L,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+002E   3CC8           00061 SUBLW D'200'
+Warning[203]: Found opcode in column 1. (BTFSC)
+002F   1903           00062 BTFSC STATUS,Z
+Warning[203]: Found opcode in column 1. (RETURN)
+0030   0008           00063 RETURN
+Warning[203]: Found opcode in column 1. (MOVLW)
+0031   3005           00064 MOVLW D'5'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0032   0795           00065 ADDWF CCPR1L,F          
+Warning[203]: Found opcode in column 1. (CALL)
+0033   204D           00066 CALL GECIKME
+Warning[203]: Found opcode in column 1. (RETURN)
+0034   0008           00067 RETURN
+                      00068 
+0035                  00069 MAZALT
+Warning[203]: Found opcode in column 1. (MOVF)
+0035   0815           00070 MOVF CCPR1L,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+0036   3C00           00071 SUBLW D'0'
+Warning[203]: Found opcode in column 1. (BTFSC)
+0037   1903           00072 BTFSC STATUS,Z
+Warning[203]: Found opcode in column 1. (RETURN)
+0038   0008           00073 RETURN
+Warning[203]: Found opcode in column 1. (MOVLW)
+0039   3005           00074 MOVLW D'5'
+Warning[203]: Found opcode in column 1. (SUBWF)
+003A   0295           00075 SUBWF CCPR1L,F
+Warning[203]: Found opcode in column 1. (CALL)
+003B   204D           00076 CALL GECIKME
+Warning[203]: Found opcode in column 1. (RETURN)
+003C   0008           00077 RETURN
+                      00078 
+003D                  00079 LARTIR
+Warning[203]: Found opcode in column 1. (MOVF)
+003D   081B           00080 MOVF CCPR2L,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+003E   3CC8           00081 SUBLW D'200'
+Warning[203]: Found opcode in column 1. (BTFSC)
+003F   1903           00082 BTFSC STATUS,Z
+Warning[203]: Found opcode in column 1. (RETURN)
+0040   0008           00083 RETURN
+Warning[203]: Found opcode in column 1. (MOVLW)
+0041   3005           00084 MOVLW D'5'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0042   079B           00085 ADDWF CCPR2L,F
+Warning[203]: Found opcode in column 1. (CALL)
+0043   204D           00086 CALL GECIKME
+Warning[203]: Found opcode in column 1. (RETURN)
+0044   0008           00087 RETURN
+                      00088 
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00089 
+0045                  00090 LAZALT
+Warning[203]: Found opcode in column 1. (MOVF)
+0045   081B           00091 MOVF CCPR2L,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+0046   3C00           00092 SUBLW D'0'
+Warning[203]: Found opcode in column 1. (BTFSC)
+0047   1903           00093 BTFSC STATUS,Z
+Warning[203]: Found opcode in column 1. (RETURN)
+0048   0008           00094 RETURN
+Warning[203]: Found opcode in column 1. (MOVLW)
+0049   3005           00095 MOVLW D'5'
+Warning[203]: Found opcode in column 1. (SUBWF)
+004A   029B           00096 SUBWF CCPR2L,F
+Warning[203]: Found opcode in column 1. (CALL)
+004B   204D           00097 CALL GECIKME
+Warning[203]: Found opcode in column 1. (RETURN)
+004C   0008           00098 RETURN
+                      00099 
+                      00100 
+004D                  00101 GECIKME
+Warning[203]: Found opcode in column 1. (MOVLW)
+004D   30FF           00102 MOVLW 0XFF
+Warning[203]: Found opcode in column 1. (MOVWF)
+004E   00A3           00103 MOVWF SAY1              ;BUTON ARK OLAYI ICIN
+                      00104 
+004F                  00105 GECIKME2
+Warning[203]: Found opcode in column 1. (MOVLW)
+004F   30FF           00106 MOVLW 0XFF
+Warning[203]: Found opcode in column 1. (MOVWF)
+0050   00A4           00107 MOVWF SAY2
+Warning[203]: Found opcode in column 1. (DECFSZ)
+0051   0BA4           00108 DECFSZ SAY2,F
+Warning[203]: Found opcode in column 1. (GOTO)
+0052   2851           00109 GOTO $-1
+Warning[203]: Found opcode in column 1. (DECFSZ)
+0053   0BA3           00110 DECFSZ SAY1,F
+Warning[203]: Found opcode in column 1. (GOTO)
+0054   284F           00111 GOTO GECIKME2
+Warning[203]: Found opcode in column 1. (RETURN)
+0055   0008           00112 RETURN
+                      00113 
+                      00114 
+                      00115 
+                      00116 
+                      00117 
+                      00118 
+                      00119 
+Warning[205]: Found directive in column 1. (END)
+                      00120 END
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CM0                               00000000
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+D_A                               00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GECIKME                           0000004D
+GECIKME2                          0000004F
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+KESME                             00000004
+KONTROLET                         00000024
+LARTIR                            0000003D
+LAZALT                            00000045
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+MARTIR                            0000002D
+MAZALT                            00000035
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SAY1                              00000023
+SAY2                              00000024
+SEN                               00000000
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1CS                            00000001
+TMR1H                             0000000F
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+MPASM  5.37                           PWM.ASM   11-26-2018  15:50:07         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+__DEBUG                           1
+anaprogram                        00000004
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXX---------- ---------------- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    83
+Program Memory Words Free:  8109
+
+
+Errors   :     0
+Warnings :    82 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+

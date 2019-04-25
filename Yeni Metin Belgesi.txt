@@ -1,0 +1,123 @@
+#INCLUDE <P16F877A.INC>
+
+sayi1 EQU 0X24
+sayi2 EQU 0X25
+tasma EQU 0X26
+yedek EQU 0x27
+ORG 0X00
+goto anaprogram
+
+ORG 0X04
+
+kesme
+retfie
+
+
+anaprogram
+MOVLW D'255'
+MOVWF sayi1
+MOVWF yedek
+MOVLW D'255'
+MOVWF sayi2
+BCF STATUS,C
+CLRF tasma
+
+CLRW
+
+
+GOTO TOPLA1
+
+KONTROL
+BTFSS STATUS,C
+GOTO TOPLA1
+INCF tasma
+BCF STATUS,C
+GOTO KONTROL
+
+KONTROL2
+BTFSC STATUS,C
+goto YAZDIR
+INCF tasma
+goto YAZDIR
+
+
+TOPLA1
+
+
+ADDWF sayi1,W
+DECFSZ sayi2,1
+GOTO KONTROL
+MOVWF sayi1
+GOTO KONTROL2
+
+YAZDIR
+MOVF tasma,0
+NOP
+NOP
+END
+
+
+
+----------------------------------------------------------------
+
+
+
+#INCLUDE <P16F877A.INC>
+
+sayi1 EQU 0X24
+sayi2 EQU 0X25
+tasma EQU 0X26
+
+ORG 0X00
+goto anaprogram
+
+ORG 0X04
+
+kesme
+retfie
+
+
+anaprogram
+MOVLW D'150'
+MOVWF sayi1
+MOVLW D'2'
+MOVWF sayi2
+BCF STATUS,C
+CLRF tasma
+CLRW
+
+TOPLAMA
+BTFSC STATUS,C
+GOTO A
+ADDWF sayi1,w
+DECFSZ sayi2,f
+GOTO TOPLAMA
+GOTO YAZDIR
+
+A
+INCF tasma
+BCF STATUS,C
+GOTO TOPLAMA
+
+YAZDIR
+BTFSC STATUS,C
+INCF tasma
+MOVWF sayi1
+MOVF tasma,w
+
+NOP
+NOP
+END
+
+
+
+
+
+
+
+
+
+
+
+
+

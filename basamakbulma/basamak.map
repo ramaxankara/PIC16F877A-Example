@@ -1,0 +1,54 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Thu Jan 10 23:06:21 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000004    program   0x0000b4
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000004    0x00005d      
+            90 out of 8453 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    BASLA   0x00000f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                   BASLA2   0x000018    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                   BASLA3   0x000021    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                    DONGU   0x000025    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                  GECIKME   0x000059    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                    ONLAR   0x00001d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+               anaprogram   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+           karaktergönder   0x00002f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+              karakteryaz   0x000049    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+              komutgönder   0x000026    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                 komutyaz   0x000039    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                        y   0x000014    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               anaprogram   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                    BASLA   0x00000f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                        y   0x000014    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                   BASLA2   0x000018    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                    ONLAR   0x00001d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                   BASLA3   0x000021    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                    DONGU   0x000025    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+              komutgönder   0x000026    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+           karaktergönder   0x00002f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                 komutyaz   0x000039    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+              karakteryaz   0x000049    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+                  GECIKME   0x000059    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\basamakbulma\basamak.asm
+
+

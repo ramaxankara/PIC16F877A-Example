@@ -1,0 +1,48 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Sun Jan 06 21:58:16 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x000054
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x00002d      
+            43 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  GECIKME   0x000025    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                 GECIKME1   0x000027    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                 GECIKME2   0x000029    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                  KONTROL   0x00000c    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                   LOOKUP   0x000019    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                  SIFIRLA   0x000016    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+               anaprogram   0x000005    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+               anaprogram   0x000005    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                  KONTROL   0x00000c    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                  SIFIRLA   0x000016    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                   LOOKUP   0x000019    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                  GECIKME   0x000025    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                 GECIKME1   0x000027    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+                 GECIKME2   0x000029    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\0-9sayici\sayici.asm
+
+

@@ -1,0 +1,44 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Tue Nov 06 09:53:56 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x0000ae
+    .config_2007_SANIYE.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x00005a      
+                            0x002007    0x002007      
+            89 out of 8453 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  GECIKME   0x00004a    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+                    KESME   0x000004    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+               KESMEBEKLE   0x000039    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+                LOOKTABLE   0x00004f    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+               anaprogram   0x000019    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KESME   0x000004    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+               anaprogram   0x000019    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+               KESMEBEKLE   0x000039    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+                  GECIKME   0x00004a    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+                LOOKTABLE   0x00004f    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\saniye_hafta3\saniye.asm
+
+

@@ -1,0 +1,52 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Nov 26 15:50:09 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x0000a4
+       .config_2007_PWM.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000055      
+                            0x002007    0x002007      
+            84 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  GECIKME   0x00004d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                 GECIKME2   0x00004f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                KONTROLET   0x000024    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   LARTIR   0x00003d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   LAZALT   0x000045    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   MARTIR   0x00002d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   MAZALT   0x000035    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+               anaprogram   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+               anaprogram   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                KONTROLET   0x000024    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   MARTIR   0x00002d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   MAZALT   0x000035    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   LARTIR   0x00003d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                   LAZALT   0x000045    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                  GECIKME   0x00004d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+                 GECIKME2   0x00004f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\PWM_hafta5\pwm.asm
+
+

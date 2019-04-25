@@ -1,0 +1,36 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Fri Jan 11 14:42:37 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000004    program   0x000042
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000004    0x000024      
+            33 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    DONGU   0x00001a    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\adc\adc.asm
+                   OKUYAZ   0x00001d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\adc\adc.asm
+               anaprogram   0x000005    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\adc\adc.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               anaprogram   0x000005    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\adc\adc.asm
+                    DONGU   0x00001a    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\adc\adc.asm
+                   OKUYAZ   0x00001d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\adc\adc.asm
+
+

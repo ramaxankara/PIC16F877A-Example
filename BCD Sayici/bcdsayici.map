@@ -1,0 +1,52 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Oct 08 21:42:09 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x00005c
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000031      
+            47 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    ARTIR   0x00001a    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    AZALT   0x00002d    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                  DOKUZMU   0x000013    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    DONGU   0x00001c    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                   DONGU2   0x00002f    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    DÜZEN   0x000010    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                  KONTROL   0x00001f    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                  SIFIRMI   0x000022    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+               anaprogram   0x000005    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    kesme   0x000004    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    kesme   0x000004    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+               anaprogram   0x000005    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    DÜZEN   0x000010    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                  DOKUZMU   0x000013    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    ARTIR   0x00001a    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    DONGU   0x00001c    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                  KONTROL   0x00001f    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                  SIFIRMI   0x000022    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                    AZALT   0x00002d    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+                   DONGU2   0x00002f    program     static C:\Users\ramaz\OneDrive\Masaüstü\Mikroislemci Projeler\BCD Sayici\bcdsayici.asm
+
+

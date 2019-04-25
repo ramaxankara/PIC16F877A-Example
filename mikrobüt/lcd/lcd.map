@@ -1,0 +1,70 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Jan 21 00:30:30 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000124
+       .config_2007_LCD.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000091      
+                            0x002007    0x002007      
+            147 out of 8453 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                ANALOGYAZ   0x000037    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+               ANAPROGRAM   0x000000    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+             BASAMAKBULMA   0x000022    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   BIRLER   0x000033    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                    GECIK   0x00008d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  GECIKME   0x000089    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                 GECIKME2   0x00008b    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+              KARAKTERYAZ   0x000071    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                 KOMUTYAZ   0x000069    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  KONTROL   0x000015    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   LOOKUP   0x000079    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  LOOKUP2   0x000082    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                    ONLAR   0x00002b    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   ONLAR2   0x00002d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   SONSUZ   0x000014    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  TEMIZLE   0x00004d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                      YAZ   0x000054    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                     YAZ2   0x000060    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   YUZLER   0x000025    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               ANAPROGRAM   0x000000    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   SONSUZ   0x000014    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  KONTROL   0x000015    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+             BASAMAKBULMA   0x000022    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   YUZLER   0x000025    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                    ONLAR   0x00002b    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   ONLAR2   0x00002d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   BIRLER   0x000033    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                ANALOGYAZ   0x000037    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  TEMIZLE   0x00004d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                      YAZ   0x000054    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                     YAZ2   0x000060    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                 KOMUTYAZ   0x000069    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+              KARAKTERYAZ   0x000071    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                   LOOKUP   0x000079    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  LOOKUP2   0x000082    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                  GECIKME   0x000089    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                 GECIKME2   0x00008b    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+                    GECIK   0x00008d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\lcd\lcd.asm
+
+

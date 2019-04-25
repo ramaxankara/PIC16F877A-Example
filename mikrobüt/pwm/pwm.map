@@ -1,0 +1,48 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Jan 21 19:54:31 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x000062
+       .config_2007_PWM.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000034      
+                            0x002007    0x002007      
+            51 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  GECIKME   0x00002c    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                 GECIKME2   0x00002e    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                KONTROLET   0x00001e    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                   MARTIR   0x000021    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                   SONSUZ   0x000029    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+               anaprogram   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+               anaprogram   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                KONTROLET   0x00001e    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                   MARTIR   0x000021    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                   SONSUZ   0x000029    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                  GECIKME   0x00002c    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+                 GECIKME2   0x00002e    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\pwm\pwm.asm
+
+

@@ -1,0 +1,40 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Sun Jan 06 15:38:42 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000044
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000021      
+            34 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    DONGU   0x00000f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                    GECIK   0x000019    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                  GECIKME   0x00001b    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                 GECIKME1   0x00001d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                     SOLA   0x000014    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    DONGU   0x00000f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                     SOLA   0x000014    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                    GECIK   0x000019    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                  GECIKME   0x00001b    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+                 GECIKME1   0x00001d    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\deneme.asm
+
+

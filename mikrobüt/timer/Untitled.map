@@ -1,0 +1,42 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Mon Jan 21 22:19:26 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x0000a0
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000053      
+            81 out of 8453 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               ANAPROGRAM   0x000019    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                  GECIKME   0x00004f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                LOOKTABLE   0x000043    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                   SONSUZ   0x000036    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+               ANAPROGRAM   0x000019    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                   SONSUZ   0x000036    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                LOOKTABLE   0x000043    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+                  GECIKME   0x00004f    program     static C:\Users\RAMAZHAN\Desktop\Mikroislemci Projeler\mikrobüt\timer\Untitled.asm
+
+
