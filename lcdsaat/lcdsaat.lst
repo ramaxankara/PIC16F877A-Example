@@ -1,0 +1,944 @@
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 #INCLUDE<P16F877A.INC>
+                      00001         LIST
+                      00002 ; P16F877A.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00400         LIST
+                      00002 
+  00000020            00003 ZAMAN1 EQU 0X20
+  00000021            00004 ZAMAN2 EQU 0X21
+  00000023            00005 SAYAC EQU 0X23
+  00000024            00006 SN EQU 0X24
+  00000025            00007 DK EQU 0X25
+  00000026            00008 SAAT EQU 0X26
+  00000027            00009 SNBIRLER EQU 0X27
+  00000028            00010 SNONLAR EQU 0X28
+  00000029            00011 DKBIRLER EQU 0X29
+  0000002A            00012 DKONLAR EQU 0X2A
+  0000002B            00013 SAATBIRLER EQU 0X2B
+  0000002C            00014 SAATONLAR EQU 0X2C
+                      00015 
+                      00016 
+                      00017 
+Warning[205]: Found directive in column 1. (ORG)
+0000                  00018 ORG 0X00
+Warning[203]: Found opcode in column 1. (GOTO)
+0000   284C           00019 GOTO anaprogram
+Warning[205]: Found directive in column 1. (ORG)
+0004                  00020 ORG 0X04
+0004                  00021 KESME
+Warning[205]: Found directive in column 1. (BANKSEL)
+0004   1283 1303      00022 BANKSEL PIR1
+Warning[203]: Found opcode in column 1. (BCF)
+0006   108C           00023 BCF PIR1,TMR2IF
+Warning[205]: Found directive in column 1. (BANKSEL)
+0007   1283 1303      00024 BANKSEL SAYAC
+Warning[203]: Found opcode in column 1. (INCF)
+0009   0AA3           00025 INCF SAYAC,F
+Warning[203]: Found opcode in column 1. (MOVF)
+000A   0823           00026 MOVF SAYAC,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+000B   3C7D           00027 SUBLW D'125'
+Warning[203]: Found opcode in column 1. (BTFSS)
+000C   1D03           00028 BTFSS STATUS,Z
+Warning[203]: Found opcode in column 1. (RETFIE)
+000D   0009           00029 RETFIE
+Warning[203]: Found opcode in column 1. (CLRF)
+000E   01A3           00030 CLRF SAYAC
+Warning[203]: Found opcode in column 1. (DECF)
+000F   03A4           00031 DECF SN,F
+Warning[203]: Found opcode in column 1. (CLRF)
+0010   01A7           00032 CLRF SNBIRLER
+Warning[203]: Found opcode in column 1. (CLRF)
+0011   01A8           00033 CLRF SNONLAR
+Warning[203]: Found opcode in column 1. (MOVF)
+0012   0824           00034 MOVF SN,W
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (SUBLW)
+0013   3CFF           00035 SUBLW D'255'
+Warning[203]: Found opcode in column 1. (BTFSS)
+0014   1D03           00036 BTFSS STATUS,Z
+Warning[203]: Found opcode in column 1. (GOTO)
+0015   282B           00037 GOTO SNBASAMAKBUL
+Warning[203]: Found opcode in column 1. (MOVLW)
+0016   303C           00038 MOVLW D'60'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0017   00A4           00039 MOVWF SN
+Warning[203]: Found opcode in column 1. (DECF)
+0018   03A5           00040 DECF DK,F
+Warning[203]: Found opcode in column 1. (CLRF)
+0019   01A9           00041 CLRF DKBIRLER
+Warning[203]: Found opcode in column 1. (CLRF)
+001A   01AA           00042 CLRF DKONLAR
+Warning[203]: Found opcode in column 1. (MOVF)
+001B   0825           00043 MOVF DK,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+001C   3CFF           00044 SUBLW D'255'
+Warning[203]: Found opcode in column 1. (BTFSS)
+001D   1D03           00045 BTFSS STATUS,Z
+Warning[203]: Found opcode in column 1. (GOTO)
+001E   2836           00046 GOTO DKBASAMAKBUL
+Warning[203]: Found opcode in column 1. (MOVLW)
+001F   303B           00047 MOVLW D'59'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0020   00A5           00048 MOVWF DK
+Warning[203]: Found opcode in column 1. (CALL)
+0021   2036           00049 CALL DKBASAMAKBUL
+Warning[203]: Found opcode in column 1. (DECF)
+0022   03A6           00050 DECF SAAT,F
+Warning[203]: Found opcode in column 1. (CLRF)
+0023   01AB           00051 CLRF SAATBIRLER
+Warning[203]: Found opcode in column 1. (CLRF)
+0024   01AC           00052 CLRF SAATONLAR
+Warning[203]: Found opcode in column 1. (MOVF)
+0025   0826           00053 MOVF SAAT,W
+Warning[203]: Found opcode in column 1. (SUBLW)
+0026   3C18           00054 SUBLW D'24'
+Warning[203]: Found opcode in column 1. (BTFSS)
+0027   1D03           00055 BTFSS STATUS,Z
+Warning[203]: Found opcode in column 1. (GOTO)
+0028   2841           00056 GOTO SAATBASAMAKBUL
+Warning[203]: Found opcode in column 1. (CLRF)
+0029   01A6           00057 CLRF SAAT
+Warning[203]: Found opcode in column 1. (RETFIE)
+002A   0009           00058 RETFIE
+                      00059 
+                      00060 
+002B                  00061 SNBASAMAKBUL
+Warning[203]: Found opcode in column 1. (MOVF)
+002B   0824           00062 MOVF SN,W
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVWF)
+002C   00A7           00063 MOVWF SNBIRLER
+Warning[203]: Found opcode in column 1. (INCF)
+Message[305]: Using default destination of 1 (file).
+002D   0AA8           00064 INCF SNONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+002E   300A           00065 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (SUBWF)
+002F   02A7           00066 SUBWF SNBIRLER,F
+Warning[203]: Found opcode in column 1. (BTFSC)
+0030   1803           00067 BTFSC STATUS,C
+Warning[203]: Found opcode in column 1. (GOTO)
+0031   282D           00068 GOTO $-4
+Warning[203]: Found opcode in column 1. (MOVLW)
+0032   300A           00069 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0033   07A7           00070 ADDWF SNBIRLER,F
+Warning[203]: Found opcode in column 1. (DECF)
+0034   03A8           00071 DECF SNONLAR,F
+Warning[203]: Found opcode in column 1. (RETFIE)
+0035   0009           00072 RETFIE
+                      00073 
+                      00074 
+0036                  00075 DKBASAMAKBUL
+Warning[203]: Found opcode in column 1. (MOVF)
+0036   0825           00076 MOVF DK,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+0037   00A9           00077 MOVWF DKBIRLER
+Warning[203]: Found opcode in column 1. (INCF)
+0038   0AAA           00078 INCF DKONLAR,F
+Warning[203]: Found opcode in column 1. (MOVLW)
+0039   300A           00079 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (SUBWF)
+003A   02A9           00080 SUBWF DKBIRLER,F
+Warning[203]: Found opcode in column 1. (BTFSC)
+003B   1803           00081 BTFSC STATUS,C
+Warning[203]: Found opcode in column 1. (GOTO)
+003C   2838           00082 GOTO $-4
+Warning[203]: Found opcode in column 1. (MOVLW)
+003D   300A           00083 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (ADDWF)
+003E   07A9           00084 ADDWF DKBIRLER,F
+Warning[203]: Found opcode in column 1. (DECF)
+003F   03AA           00085 DECF DKONLAR,F
+Warning[203]: Found opcode in column 1. (RETFIE)
+0040   0009           00086 RETFIE
+                      00087 
+0041                  00088 SAATBASAMAKBUL
+Warning[203]: Found opcode in column 1. (MOVF)
+0041   0826           00089 MOVF SAAT,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+0042   00AB           00090 MOVWF SAATBIRLER
+Warning[203]: Found opcode in column 1. (INCF)
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0043   0AAC           00091 INCF SAATONLAR,F
+Warning[203]: Found opcode in column 1. (MOVLW)
+0044   300A           00092 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (SUBWF)
+0045   02AB           00093 SUBWF SAATBIRLER,F
+Warning[203]: Found opcode in column 1. (BTFSC)
+0046   1803           00094 BTFSC STATUS,C
+Warning[203]: Found opcode in column 1. (GOTO)
+0047   2843           00095 GOTO $-4
+Warning[203]: Found opcode in column 1. (MOVLW)
+0048   300A           00096 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0049   07AB           00097 ADDWF SAATBIRLER,F
+Warning[203]: Found opcode in column 1. (DECF)
+004A   03AC           00098 DECF SAATONLAR,F
+Warning[203]: Found opcode in column 1. (RETFIE)
+004B   0009           00099 RETFIE
+                      00100 
+                      00101 
+004C                  00102 anaprogram
+Warning[205]: Found directive in column 1. (BANKSEL)
+004C   1683 1303      00103 BANKSEL TRISB
+Warning[203]: Found opcode in column 1. (CLRF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+004E   0186           00104 CLRF TRISB
+Warning[203]: Found opcode in column 1. (CLRF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+004F   0187           00105 CLRF TRISC
+Warning[203]: Found opcode in column 1. (CLRF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0050   0188           00106 CLRF TRISD
+                      00107 
+Warning[205]: Found directive in column 1. (BANKSEL)
+0051   1283 1303      00108 BANKSEL PORTB
+Warning[203]: Found opcode in column 1. (CLRF)
+0053   0186           00109 CLRF PORTB
+                      00110 
+                      00111 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0054   300A           00112 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0055   00A4           00113 MOVWF SN
+Warning[203]: Found opcode in column 1. (MOVLW)
+0056   3005           00114 MOVLW D'5'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0057   00A5           00115 MOVWF DK
+Warning[203]: Found opcode in column 1. (MOVLW)
+0058   3014           00116 MOVLW D'20'
+Warning[203]: Found opcode in column 1. (MOVWF)
+0059   00A6           00117 MOVWF SAAT
+                      00118 
+                      00119 
+Warning[203]: Found opcode in column 1. (MOVF)
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+005A   0824           00120 MOVF SN,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+005B   00A7           00121 MOVWF SNBIRLER
+Warning[203]: Found opcode in column 1. (INCF)
+Message[305]: Using default destination of 1 (file).
+005C   0AA8           00122 INCF SNONLAR
+Warning[203]: Found opcode in column 1. (MOVLW)
+005D   300A           00123 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (SUBWF)
+005E   02A7           00124 SUBWF SNBIRLER,F
+Warning[203]: Found opcode in column 1. (BTFSC)
+005F   1803           00125 BTFSC STATUS,C
+Warning[203]: Found opcode in column 1. (GOTO)
+0060   285C           00126 GOTO $-4
+Warning[203]: Found opcode in column 1. (MOVLW)
+0061   300A           00127 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0062   07A7           00128 ADDWF SNBIRLER,F
+Warning[203]: Found opcode in column 1. (DECF)
+0063   03A8           00129 DECF SNONLAR,F
+                      00130 
+Warning[203]: Found opcode in column 1. (MOVF)
+0064   0825           00131 MOVF DK,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+0065   00A9           00132 MOVWF DKBIRLER
+Warning[203]: Found opcode in column 1. (INCF)
+0066   0AAA           00133 INCF DKONLAR,F
+Warning[203]: Found opcode in column 1. (MOVLW)
+0067   300A           00134 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (SUBWF)
+0068   02A9           00135 SUBWF DKBIRLER,F
+Warning[203]: Found opcode in column 1. (BTFSC)
+0069   1803           00136 BTFSC STATUS,C
+Warning[203]: Found opcode in column 1. (GOTO)
+006A   2866           00137 GOTO $-4
+Warning[203]: Found opcode in column 1. (MOVLW)
+006B   300A           00138 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (ADDWF)
+006C   07A9           00139 ADDWF DKBIRLER,F
+Warning[203]: Found opcode in column 1. (DECF)
+006D   03AA           00140 DECF DKONLAR,F
+                      00141 
+                      00142 
+Warning[203]: Found opcode in column 1. (MOVF)
+006E   0826           00143 MOVF SAAT,W
+Warning[203]: Found opcode in column 1. (MOVWF)
+006F   00AB           00144 MOVWF SAATBIRLER
+Warning[203]: Found opcode in column 1. (INCF)
+0070   0AAC           00145 INCF SAATONLAR,F
+Warning[203]: Found opcode in column 1. (MOVLW)
+0071   300A           00146 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (SUBWF)
+0072   02AB           00147 SUBWF SAATBIRLER,F
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (BTFSC)
+0073   1803           00148 BTFSC STATUS,C
+Warning[203]: Found opcode in column 1. (GOTO)
+0074   2870           00149 GOTO $-4
+Warning[203]: Found opcode in column 1. (MOVLW)
+0075   300A           00150 MOVLW D'10'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0076   07AB           00151 ADDWF SAATBIRLER,F
+Warning[203]: Found opcode in column 1. (DECF)
+0077   03AC           00152 DECF SAATONLAR,F
+                      00153 
+                      00154 
+                      00155 
+Warning[205]: Found directive in column 1. (BANKSEL)
+0078   1283 1303      00156 BANKSEL T2CON
+Warning[203]: Found opcode in column 1. (MOVLW)
+007A   300F           00157 MOVLW B'00001111' ;PRE 1:16 POST 1:2
+                      00158 
+Warning[203]: Found opcode in column 1. (MOVWF)
+007B   0092           00159 MOVWF T2CON
+                      00160 
+Warning[205]: Found directive in column 1. (BANKSEL)
+007C   1683 1303      00161 BANKSEL PR2
+Warning[203]: Found opcode in column 1. (MOVLW)
+007E   30FA           00162 MOVLW D'250'
+Warning[203]: Found opcode in column 1. (MOVWF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+007F   0092           00163 MOVWF PR2
+                      00164 
+Warning[205]: Found directive in column 1. (BANKSEL)
+0080   1283 1303      00165 BANKSEL INTCON
+Warning[203]: Found opcode in column 1. (BSF)
+0082   178B           00166 BSF INTCON,GIE
+Warning[203]: Found opcode in column 1. (BSF)
+0083   170B           00167 BSF INTCON,PEIE
+                      00168 
+Warning[205]: Found directive in column 1. (BANKSEL)
+0084   1683 1303      00169 BANKSEL PIE1
+Warning[203]: Found opcode in column 1. (BSF)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0086   148C           00170 BSF PIE1,TMR2IE
+                      00171 
+                      00172 
+                      00173 
+                      00174 
+                      00175 
+0087                  00176 SONSUZ
+Warning[203]: Found opcode in column 1. (CALL)
+0087   20AB           00177 CALL TEMIZLE
+Warning[203]: Found opcode in column 1. (CALL)
+0088   208A           00178 CALL KARAKTERYOLLA
+Warning[203]: Found opcode in column 1. (GOTO)
+0089   2887           00179 GOTO SONSUZ
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00180 
+                      00181 
+                      00182 
+008A                  00183 KARAKTERYOLLA
+Warning[203]: Found opcode in column 1. (MOVLW)
+008A   304B           00184 MOVLW 'K'
+Warning[203]: Found opcode in column 1. (CALL)
+008B   20BC           00185 CALL KARAKTERYAZ
+                      00186 
+Warning[203]: Found opcode in column 1. (MOVLW)
+008C   3041           00187 MOVLW 'A'
+Warning[203]: Found opcode in column 1. (CALL)
+008D   20BC           00188 CALL KARAKTERYAZ
+                      00189 
+Warning[203]: Found opcode in column 1. (MOVLW)
+008E   3052           00190 MOVLW 'R'
+Warning[203]: Found opcode in column 1. (CALL)
+008F   20BC           00191 CALL KARAKTERYAZ
+                      00192 
+                      00193 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0090   3041           00194 MOVLW 'A'
+Warning[203]: Found opcode in column 1. (CALL)
+0091   20BC           00195 CALL KARAKTERYAZ
+                      00196 
+                      00197 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0092   30C0           00198 MOVLW 0XC0
+Warning[203]: Found opcode in column 1. (CALL)
+0093   20B4           00199 CALL KOMUTYAZ
+                      00200 
+                      00201 
+                      00202 
+                      00203 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0094   3030           00204 MOVLW D'48'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0095   072C           00205 ADDWF SAATONLAR,W
+Warning[203]: Found opcode in column 1. (CALL)
+0096   20BC           00206 CALL KARAKTERYAZ
+                      00207 
+Warning[203]: Found opcode in column 1. (MOVLW)
+0097   3030           00208 MOVLW D'48'
+Warning[203]: Found opcode in column 1. (ADDWF)
+0098   072B           00209 ADDWF SAATBIRLER,W
+Warning[203]: Found opcode in column 1. (CALL)
+0099   20BC           00210 CALL KARAKTERYAZ
+                      00211 
+Warning[203]: Found opcode in column 1. (MOVLW)
+009A   303A           00212 MOVLW ':'
+Warning[203]: Found opcode in column 1. (CALL)
+009B   20BC           00213 CALL KARAKTERYAZ
+                      00214 
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[203]: Found opcode in column 1. (MOVLW)
+009C   3030           00215 MOVLW D'48'
+Warning[203]: Found opcode in column 1. (ADDWF)
+009D   072A           00216 ADDWF DKONLAR,W
+Warning[203]: Found opcode in column 1. (CALL)
+009E   20BC           00217 CALL KARAKTERYAZ
+                      00218 
+Warning[203]: Found opcode in column 1. (MOVLW)
+009F   3030           00219 MOVLW D'48'
+Warning[203]: Found opcode in column 1. (ADDWF)
+00A0   0729           00220 ADDWF DKBIRLER,W
+Warning[203]: Found opcode in column 1. (CALL)
+00A1   20BC           00221 CALL KARAKTERYAZ
+                      00222 
+                      00223 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00A2   303A           00224 MOVLW ':'
+Warning[203]: Found opcode in column 1. (CALL)
+00A3   20BC           00225 CALL KARAKTERYAZ
+                      00226 
+                      00227 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00A4   3030           00228 MOVLW D'48'
+Warning[203]: Found opcode in column 1. (ADDWF)
+00A5   0728           00229 ADDWF SNONLAR,W
+Warning[203]: Found opcode in column 1. (CALL)
+00A6   20BC           00230 CALL KARAKTERYAZ
+                      00231 
+Warning[203]: Found opcode in column 1. (MOVLW)
+00A7   3030           00232 MOVLW D'48'
+Warning[203]: Found opcode in column 1. (ADDWF)
+00A8   0727           00233 ADDWF SNBIRLER,W
+Warning[203]: Found opcode in column 1. (CALL)
+00A9   20BC           00234 CALL KARAKTERYAZ
+                      00235 
+                      00236 
+Warning[203]: Found opcode in column 1. (RETURN)
+00AA   0008           00237 RETURN
+                      00238 
+                      00239 
+                      00240 
+                      00241 
+                      00242 
+00AB                  00243 TEMIZLE
+Warning[203]: Found opcode in column 1. (MOVLW)
+00AB   3002           00244 MOVLW 0X02
+Warning[203]: Found opcode in column 1. (CALL)
+00AC   20B4           00245 CALL KOMUTYAZ
+Warning[203]: Found opcode in column 1. (MOVLW)
+00AD   3038           00246 MOVLW 0X38
+Warning[203]: Found opcode in column 1. (CALL)
+00AE   20B4           00247 CALL KOMUTYAZ
+Warning[203]: Found opcode in column 1. (MOVLW)
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00AF   300C           00248 MOVLW 0X0C
+Warning[203]: Found opcode in column 1. (CALL)
+00B0   20B4           00249 CALL KOMUTYAZ
+Warning[203]: Found opcode in column 1. (MOVLW)
+00B1   3085           00250 MOVLW 0X85
+Warning[203]: Found opcode in column 1. (CALL)
+00B2   20B4           00251 CALL KOMUTYAZ
+Warning[203]: Found opcode in column 1. (RETURN)
+00B3   0008           00252 RETURN
+                      00253 
+                      00254 
+00B4                  00255 KOMUTYAZ
+Warning[205]: Found directive in column 1. (BANKSEL)
+00B4   1283 1303      00256 BANKSEL PORTC
+Warning[203]: Found opcode in column 1. (MOVWF)
+00B6   0087           00257 MOVWF PORTC
+Warning[203]: Found opcode in column 1. (BCF)
+00B7   1206           00258 BCF PORTB,4
+Warning[203]: Found opcode in column 1. (BSF)
+00B8   1706           00259 BSF PORTB,6
+Warning[203]: Found opcode in column 1. (CALL)
+00B9   20D0           00260 CALL GECIKME
+Warning[203]: Found opcode in column 1. (BCF)
+00BA   1306           00261 BCF PORTB,6
+Warning[203]: Found opcode in column 1. (RETURN)
+00BB   0008           00262 RETURN
+                      00263 
+                      00264 
+00BC                  00265 KARAKTERYAZ
+Warning[205]: Found directive in column 1. (BANKSEL)
+00BC   1283 1303      00266 BANKSEL PORTC
+Warning[203]: Found opcode in column 1. (MOVWF)
+00BE   0087           00267 MOVWF PORTC
+Warning[203]: Found opcode in column 1. (BSF)
+00BF   1606           00268 BSF PORTB,4
+Warning[203]: Found opcode in column 1. (BSF)
+00C0   1706           00269 BSF PORTB,6
+Warning[203]: Found opcode in column 1. (CALL)
+00C1   20D0           00270 CALL GECIKME
+Warning[203]: Found opcode in column 1. (BCF)
+00C2   1306           00271 BCF PORTB,6
+Warning[203]: Found opcode in column 1. (RETURN)
+00C3   0008           00272 RETURN
+                      00273 
+                      00274 
+00C4                  00275 LOOKUP
+Warning[203]: Found opcode in column 1. (ADDWF)
+00C4   0782           00276 ADDWF PCL,F
+Warning[203]: Found opcode in column 1. (RETLW)
+00C5   3430           00277 RETLW '0'
+Warning[203]: Found opcode in column 1. (RETLW)
+00C6   3431           00278 RETLW '1'
+Warning[203]: Found opcode in column 1. (RETLW)
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00C7   3432           00279 RETLW '2'
+Warning[203]: Found opcode in column 1. (RETLW)
+00C8   3433           00280 RETLW '3'
+Warning[203]: Found opcode in column 1. (RETLW)
+00C9   3434           00281 RETLW '4'
+Warning[203]: Found opcode in column 1. (RETLW)
+00CA   3435           00282 RETLW '5'
+Warning[203]: Found opcode in column 1. (RETLW)
+00CB   3436           00283 RETLW '6'
+Warning[203]: Found opcode in column 1. (RETLW)
+00CC   3437           00284 RETLW '7'
+Warning[203]: Found opcode in column 1. (RETLW)
+00CD   3438           00285 RETLW '8'
+Warning[203]: Found opcode in column 1. (RETLW)
+00CE   3439           00286 RETLW '9'
+Warning[203]: Found opcode in column 1. (RETURN)
+00CF   0008           00287 RETURN
+                      00288 
+                      00289 
+                      00290 
+                      00291 
+                      00292 
+                      00293 
+                      00294 
+                      00295 
+                      00296 
+00D0                  00297 GECIKME
+Warning[203]: Found opcode in column 1. (MOVLW)
+00D0   3064           00298 MOVLW D'100'
+Warning[203]: Found opcode in column 1. (MOVWF)
+00D1   00A0           00299 MOVWF ZAMAN1
+                      00300 
+00D2                  00301 GECIK1
+Warning[203]: Found opcode in column 1. (MOVLW)
+00D2   3050           00302 MOVLW D'80'
+Warning[203]: Found opcode in column 1. (MOVWF)
+00D3   00A1           00303 MOVWF ZAMAN2
+                      00304 
+00D4                  00305 GECIK2
+Warning[203]: Found opcode in column 1. (DECFSZ)
+00D4   0BA1           00306 DECFSZ ZAMAN2,F
+Warning[203]: Found opcode in column 1. (GOTO)
+00D5   28D4           00307 GOTO $-1
+Warning[203]: Found opcode in column 1. (DECFSZ)
+00D6   0BA0           00308 DECFSZ ZAMAN1,F
+Warning[203]: Found opcode in column 1. (GOTO)
+00D7   28D2           00309 GOTO GECIK1
+Warning[203]: Found opcode in column 1. (RETURN)
+00D8   0008           00310 RETURN
+                      00311 
+                      00312 
+                      00313 
+                      00314 
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00315 
+Warning[205]: Found directive in column 1. (END)
+                      00316 END
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CM0                               00000000
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+DK                                00000025
+DKBASAMAKBUL                      00000036
+DKBIRLER                          00000029
+DKONLAR                           0000002A
+D_A                               00000005
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GCEN                              00000007
+GECIK1                            000000D2
+GECIK2                            000000D4
+GECIKME                           000000D0
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IBF                               00000007
+IBOV                              00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+IRP                               00000007
+KARAKTERYAZ                       000000BC
+KARAKTERYOLLA                     0000008A
+KESME                             00000004
+KOMUTYAZ                          000000B4
+LOOKUP                            000000C4
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OBF                               00000006
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSPIE                             00000007
+PSPIF                             00000007
+PSPMODE                           00000004
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SAAT                              00000026
+SAATBASAMAKBUL                    00000041
+SAATBIRLER                        0000002B
+SAATONLAR                         0000002C
+SAYAC                             00000023
+SEN                               00000000
+SMP                               00000007
+SN                                00000024
+SNBASAMAKBUL                      0000002B
+SNBIRLER                          00000027
+SNONLAR                           00000028
+SONSUZ                            00000087
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 16
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TEMIZLE                           000000AB
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRISD                             00000088
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+ZAMAN1                            00000020
+ZAMAN2                            00000021
+_BODEN_OFF                        00003FBF
+MPASM  5.37                       LCDSAAT.ASM   4-30-2019  13:40:00         PAGE 17
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F877A                         00000001
+__DEBUG                           1
+anaprogram                        0000004C
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXX------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   214
+Program Memory Words Free:  7978
+
+
+Errors   :     0
+Warnings :   207 reported,     0 suppressed
+Messages :     7 reported,     0 suppressed
+
+

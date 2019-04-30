@@ -1,0 +1,60 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Tue Apr 30 13:40:04 2019
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x0001aa
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x0000d8      
+            214 out of 8453 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             DKBASAMAKBUL   0x000036    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   GECIK1   0x0000d2    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   GECIK2   0x0000d4    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                  GECIKME   0x0000d0    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+              KARAKTERYAZ   0x0000bc    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+            KARAKTERYOLLA   0x00008a    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                 KOMUTYAZ   0x0000b4    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   LOOKUP   0x0000c4    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+           SAATBASAMAKBUL   0x000041    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+             SNBASAMAKBUL   0x00002b    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   SONSUZ   0x000087    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                  TEMIZLE   0x0000ab    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+               anaprogram   0x00004c    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    KESME   0x000004    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+             SNBASAMAKBUL   0x00002b    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+             DKBASAMAKBUL   0x000036    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+           SAATBASAMAKBUL   0x000041    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+               anaprogram   0x00004c    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   SONSUZ   0x000087    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+            KARAKTERYOLLA   0x00008a    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                  TEMIZLE   0x0000ab    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                 KOMUTYAZ   0x0000b4    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+              KARAKTERYAZ   0x0000bc    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   LOOKUP   0x0000c4    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                  GECIKME   0x0000d0    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   GECIK1   0x0000d2    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+                   GECIK2   0x0000d4    program     static C:\Users\RAMAZHAN\Desktop\mikroproje\lcdsaat\lcdsaat.asm
+
+
